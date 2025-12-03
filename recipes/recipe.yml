@@ -1,5 +1,4 @@
 # recipes/recipe.yml
-type: bootc
 name: qsblue-niri-dms
 # Modern BlueBuild images are bootc-based (works exactly like your current Containerfile)
 image-version: 43
@@ -54,9 +53,9 @@ modules:
 
 
     type: systemd
-    systemd:
+    system:
       enabled:
-        - greetd.service
+        - greetd
         - firewalld
         - cliphist
     
