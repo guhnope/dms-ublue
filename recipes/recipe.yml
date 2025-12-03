@@ -36,12 +36,7 @@ modules:
     remove:
       - firefox
       - firefox-langpacks
-      - gnome-software
-      - gnome-software-rpm-ostree
       - sddm
-      - gdm
-      - gnome-tour
-      - yelp
 
   - type: files
     files:
