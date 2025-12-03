@@ -49,11 +49,7 @@ modules:
       enabled:
         - greetd
         - firewalld
-
   - type: script
-    script: |
-      #!/bin/bash
-      set -euo pipefail
-      mkdir -p /usr/lib/systemd/user/default.target.wants
-      ln -sf ../dms-skel.service /usr/lib/systemd/user/default.target.wants/
+    script:
+      - dms-skel.sh
 description: "QuickBlue - Niri + DankMaterialShell + DMS Greeter + Brave dev setup"

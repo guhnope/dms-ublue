@@ -47,6 +47,10 @@ modules:
     files:
       - source: hypr
         destination: /
+      - source: dms
+        destination: /etc
+      - source: users
+        destination: /usr/lib/systemd/user/        
 
   - type: systemd
     system:
