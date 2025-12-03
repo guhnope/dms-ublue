@@ -37,14 +37,11 @@ modules:
       - firefox-langpacks
       - sddm
     replace:  # Force newer Qt (6.10.1 from F43 updates)
-      - packages:
-          - qt6-qtbase
-          - qt6-qtdeclarative
-          - qt6-qtwayland  # Core Qt deps for Quickshell/DMS
-        from-url:  # Pull from Fedora 43 updates mirror
-          - https://archives.fedoraproject.org/pub/archive/fedora/linux/updates/43/Everything/x86_64/Packages/q/qt6-qtbase-6.10.1-1.fc43.x86_64.rpm
-          - https://archives.fedoraproject.org/pub/archive/fedora/linux/updates/43/Everything/x86_64/Packages/q/qt6-qtdeclarative-6.10.1-1.fc43.x86_64.rpm
-          - https://archives.fedoraproject.org/pub/archive/fedora/linux/updates/43/Everything/x86_64/Packages/q/qt6-qtwayland-6.10.1-1.fc43.x86_64.rpm
+      - from-repo: https://archives.fedoraproject.org/pub/archive/fedora/linux/updates/43/Everything/x86_64/Packages/q/
+        packages:
+          - qt6-qtbase-6.10.1-1.fc43.x86_64
+          - qt6-qtdeclarative-6.10.1-1.fc43.x86_64
+          - qt6-qtwayland-6.10.1-1.fc43.x86_64
       # Add more Qt subpkgs if needed (e.g., qt6-qtquick3d for full Quickshell)
   - type: files
     files:
