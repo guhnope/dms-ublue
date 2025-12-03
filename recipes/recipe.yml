@@ -30,6 +30,7 @@ modules:
       - dms
       - dms-greeter
       - wlsunset
+      - cliphist
       - imv
       - mpv
       - nemo
@@ -53,8 +54,12 @@ modules:
 
 
     type: systemd
-    enabled:
-      - greetd.service
+    systemd:
+      enabled:
+        - greetd.service
+        - firewalld
+        - cliphist
+    
 
 
 # Optional: add a description so blue-build.org dashboard looks nice
