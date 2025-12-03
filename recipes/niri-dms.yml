@@ -50,6 +50,6 @@ modules:
         - greetd
         - firewalld
   - type: script
-    script:
+    scripts:
       - dms-skel.sh
 description: "QuickBlue - Niri + DankMaterialShell + DMS Greeter + Brave dev setup"
