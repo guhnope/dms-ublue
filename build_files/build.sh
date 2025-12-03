@@ -32,6 +32,6 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 # Install from list (ignore comments/empty lines)
 if [[ -f /build/packagelist_files/flatpak.txt ]]; then
     echo "Installing Flatpaks from flatpak.txt..."
-    flatpak install -y --or-update flathub $$ (grep -v '^#' /build/packagelist_files/flatpak.txt | grep -v '^ $$' | tr '\n' ' ')
+    flatpak install -y --or-update flathub $$ (grep -v '^#' /build/packagelist_files/flatpak.txt | grep -v '^ $' | tr '\n' ' ')
 fi
 
