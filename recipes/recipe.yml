@@ -34,17 +34,9 @@ modules:
 
   - type: files
     files:
-      # Your greetd + DMS Greeter configs
-      - source: system_files/etc/greetd
-        destination: /etc/greetd
+      - source: system_files
+        destination: /
 
-      # Niri config for new users
-      - source: system_files/etc/niri
-        destination: /usr/etc/skel/.config/niri
-
-      # Any other dotfiles you want in /usr/etc/skel
-      - source: config/dms
-        destination: /usr/etc/skel/.config/dms
 
   - type: script
     scripts:
