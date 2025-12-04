@@ -11,6 +11,9 @@ modules:
         - ublue-os/packages
   - type: rpm-ostree        
     install:
+      - quickshell  
+      - dms
+      - dms-greeter        
       - hyprland
       - hyprpicker
       - hyprsysteminfo
@@ -19,7 +22,6 @@ modules:
       - hyprcursor
       - hyprshot
       - hyprdim
-      - qt6ct-kde
       - adw-gtk3-theme
       - alacritty
       - greetd
@@ -30,11 +32,8 @@ modules:
       - hyprpolkitagent
       - wl-clipboard
       - network-manager-applet
-      - quickshell
       - matugen
       - material-symbols-fonts
-      - dms
-      - dms-greeter
       - wlsunset
       - cliphist
       - imv
