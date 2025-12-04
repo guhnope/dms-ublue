@@ -54,7 +54,11 @@ modules:
       - dms-skel.sh
   - type: defualt-flatpaks
     configurations:
-      - scope: system
+      - scope: user
+        repo:
+          title: Flathub (user)
+      - notify: true    
+        scope: system
         repo:
           title: Flathub (System)
         install:
@@ -65,7 +69,6 @@ modules:
           - com.slack.Slack
           - md.obsidian.Obsidian
 
-      
 description: "Niri + DankMaterialShell in an Atomic Desktop"
 
 
