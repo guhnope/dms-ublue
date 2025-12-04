@@ -1,4 +1,4 @@
-name: bluemango
+name: BlueMango
 image-version: 43
 base-image: ghcr.io/ublue-os/base-main
 modules:
@@ -49,13 +49,18 @@ modules:
     files:
       - source: mango
         destination: /
-      - source: users
-        destination: /usr/lib/systemd/user/        
+      - source: system
+        destination: /     
   - type: systemd
     system:
       enabled:
         - greetd
         - firewalld
+  - type: rpm-ostree        
+    remove: # Remove unwanted packages that were installed as weak dependancies
+      - gnome-keyring
+      - fuzzel
+      - waybar        
   - type: script
     scripts:
       - dms-skel.sh
