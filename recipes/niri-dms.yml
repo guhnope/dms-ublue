@@ -36,7 +36,6 @@ modules:
     remove:
       - firefox
       - firefox-langpacks
-      - waybar
   - type: files
     files:
       - source: niri
