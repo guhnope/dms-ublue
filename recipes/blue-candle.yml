@@ -2,8 +2,6 @@ name: BlueCandle
 image-version: 43
 base-image: ghcr.io/ublue-os/base-main
 modules:
-  - type: os-release
-    name: "BlueCandle 43"
   - type: dnf
     repos:   
       copr:
