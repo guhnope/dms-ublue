@@ -38,13 +38,26 @@ modules:
       - mpv
       - nemo
       - mousepad
-      - brave-browser
-      - code
     remove:
       - firefox
       - firefox-langpacks
       - vim-minimal  
-      - vim-enhanced           
+      - vim-enhanced
+  - type: default-flatpaks
+    configurations:
+      - scope: system
+        notify: true
+        repo:
+          url: https://dl.flathub.org/repo/flathub.flatpakrepo
+          name: flathub
+          title: Flathub
+        install:
+          - com.google.Chrome
+          - com.slack.Slack
+          - md.obsidian.Obsidian
+          - com.visualstudio.code
+          - org.libreoffice.LibreOffice
+          - com.spotify.Client                
   - type: files
     files:
       - source: mango
