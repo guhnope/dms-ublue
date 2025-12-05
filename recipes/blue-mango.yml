@@ -4,12 +4,6 @@ base-image: ghcr.io/ublue-os/base-main
 modules:
   - type: dnf
     repos:
-      files:
-        - brave.repo
-        - vscode.repo
-      keys:
-        - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
-        - https://packages.microsoft.com/keys/microsoft.asc
       copr:
           - dennemann/MangoWC
           - avengemedia/dms
@@ -35,9 +29,7 @@ modules:
       - wlsunset
       - cliphist
       - imv
-      - mpv
       - nemo
-      - mousepad
     remove:
       - firefox
       - firefox-langpacks
@@ -57,7 +49,9 @@ modules:
           - md.obsidian.Obsidian
           - com.visualstudio.code
           - org.libreoffice.LibreOffice
-          - com.spotify.Client                
+          - com.spotify.Client
+          - io.mpv.Mpv          
+          - org.xfce.mousepad
   - type: files
     files:
       - source: mango

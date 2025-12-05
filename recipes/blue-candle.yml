@@ -3,13 +3,7 @@ image-version: 43
 base-image: ghcr.io/ublue-os/base-main
 modules:
   - type: dnf
-    repos:
-      files:
-        - brave.repo
-        - vscode.repo
-      keys:
-        - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
-        - https://packages.microsoft.com/keys/microsoft.asc    
+    repos:   
       copr:
         - avengemedia/dms
         - avengemedia/danklinux
@@ -34,14 +28,12 @@ modules:
       - material-symbols-fonts
       - dms
       - dms-greeter
+      - adw-gtk3-theme 
       - wlsunset
       - neovim
       - cliphist
       - imv
-      - mpv
       - nemo
-      - mousepad
-      - brave-browser
     remove:
       - firefox
       - firefox-langpacks
@@ -61,7 +53,9 @@ modules:
           - md.obsidian.Obsidian
           - com.visualstudio.code
           - org.libreoffice.LibreOffice
-          - com.spotify.Client   
+          - com.spotify.Client
+          - io.mpv.mpv
+          - org.xfce.mousepad          
   - type: files
     files:
       - source: niri
