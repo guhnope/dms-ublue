@@ -30,6 +30,7 @@ modules:
       - wlsunset
       - cliphist
       - imv
+      - neovim
       - caja
       - atril
       - mousepad
@@ -67,6 +68,9 @@ modules:
       enabled:
         - greetd
         - firewalld
+  - type: rpm-ostree   
+    remove: 
+      - libreoffice                 
   - type: script
     scripts:
       - dms-skel.sh

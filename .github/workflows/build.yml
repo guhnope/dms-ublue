@@ -2,7 +2,7 @@ name: Build uBlue images
 on:
   push:
     branches: [ main ]
-  workflow_dispatch:  # Manual trigger button in Actions tab
+  workflow_dispatch: 
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,14 +13,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build BlueCandle image
-        uses: blue-build/github-action@v1  # ← Corrected: This is a composite action
+        uses: blue-build/github-action@v1 
         with:
-          recipe: blue-candle.yml  # Your main recipe file (adjust if in a subdir like recipes/)
-          cosign_private_key: ${{ secrets.SIGNING_SECRET }}  # Optional: For signing (skip for now)
+          recipe: blue-candle.yml  #
+          cosign_private_key: ${{ secretsSIGNING_SECRET }}  
           registry_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Build BlueMango Image
-        uses: blue-build/github-action@v1  # ← Corrected: This is a composite action
+        uses: blue-build/github-action@v1  
         with:
-          recipe: blue-mango.yml  # Your main recipe file (adjust if in a subdir like recipes/)
-          cosign_private_key: ${{ secrets.SIGNING_SECRET }}  # Optional: For signing (skip for now)
+          recipe: blue-mango.yml 
+          cosign_private_key: ${{ secrets.SIGNING_SECRET }}  
           registry_token: ${{ secrets.GITHUB_TOKEN }}
