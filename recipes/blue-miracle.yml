@@ -1,0 +1,81 @@
+name: BlueSway
+image-version: 43
+base-image: ghcr.io/ublue-os/base-main
+modules:
+  - type: dnf
+    repos:
+      copr:
+        - avengemedia/dms
+        - avengemedia/danklinux
+        - ublue-os/packages
+  - type: rpm-ostree        
+    install:
+      - quickshell  
+      - dms
+      - dms-greeter
+      - miracle-wm
+      - grim
+      - slurp
+      - mako
+      - swayidle
+      - adw-gtk3-theme
+      - alacritty
+      - greetd
+      - greetd-tuigreet
+      - greetd-selinux
+      - qt6-qtwayland
+      - wl-clipboard
+      - mate-polkit      
+      - xdg-desktop-portal-gtk
+      - network-manager-applets
+      - material-symbols-fonts
+      - pavucontrol
+      - brightnessctl
+      - wlsunset
+      - cliphist
+      - imv
+      - neovim
+      - caja
+      - atril
+      - mousepad
+      - engrampa
+      - paperwork
+      - blueman
+      - mpv
+    remove:
+      - firefox
+      - firefox-langpacks
+      - vim-minimal  
+      - vim-enhanced
+  - type: default-flatpaks
+    configurations:
+      - scope: system
+        notify: true
+        repo:
+          url: https://dl.flathub.org/repo/flathub.flatpakrepo
+          name: flathub
+          title: Flathub
+        install:
+          - com.google.Chrome
+          - com.slack.Slack
+          - md.obsidian.Obsidian
+          - com.visualstudio.code
+          - com.spotify.Client
+  - type: files
+    files:
+      - source: sway
+        destination: /
+      - source: system
+        destination: /     
+  - type: systemd
+    system:
+      enabled:
+        - greetd
+        - firewalld               
+  - type: script
+    scripts:
+      - dms-skel.sh
+      - greetd-users.sh
+      - neovim.sh
+      - misc.sh
+description: "Sway + DankMaterialShell in an Atomic Desktop"

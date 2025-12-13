@@ -8,10 +8,10 @@ set $mod Mod4
 set $term alacritty
 
 # Your preferred file manager
-set $files nemo
+set $files caja
 
 # Your preferred browser
-set $browser brave
+set $browser flatpak run com.google.Chrome
 
 # Use fuzzy finder for applications
 set $menu dms ipc call spotlight toggle
@@ -88,6 +88,13 @@ bindsym Alt+Left focus left
 bindsym Alt+Right focus right
 bindsym Alt+Up focus up
 bindsym Alt+Down focus down
+
+bindsym XF86AudioRaiseVolume dms ipc call audio increment 3
+bindsym XF86AudioLowerVolume dms ipc call audio decrement 3
+bindsym XF86AudioMute dms ipc call audio mute
+bindsym XF86AudioMicMute dms ipc call audio micmute
+bindsym XF86MonBrightnessUp dms ipc call brightness increment 5
+bindsym XF86MonBrightnessDown dms ipc call brightness decrement 5
 
 # Move focused window
 bindsym $mod+Shift+Left move left
