@@ -5,6 +5,5 @@ modules:
   - from-file: common/general.yml
   - from-file: compositor/niri.yml
   - from-file: common/gaming.yml
-  - from-file: common/scripts.yml
   - type: initramfs
 description: "Niri + Noctalia in an Atomic Desktop"
