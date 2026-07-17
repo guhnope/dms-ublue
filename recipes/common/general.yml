@@ -29,7 +29,8 @@ modules:
       - caja
       - atril
       - engrampa
-      - paperwork    remove:
+      - paperwork
+    remove:
       - vim-minimal
       - vim-enhanced
       - firefox
