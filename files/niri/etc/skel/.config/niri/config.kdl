@@ -6,6 +6,12 @@ input {
     focus-follows-mouse max-scroll-amount="0%"
 }
 
+environment {
+    QT_QPA_PLATFORM "wayland"
+    QT_QPA_PLATFORMTHEME "qt6ct"
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
+}
+
 layout {
     gaps 16
     background-color "transparent"
@@ -47,30 +53,21 @@ window-rule {
     clip-to-geometry true
 }
 
+window-rule {
+    match is-active=false
+    opacity 0.9
+}
+
 // ----------------------------------------------------------------
-// Keybinds (Now running entirely on variables)
+// Keybinds
 // ----------------------------------------------------------------
 binds {
-    // Shell UI Elements
-    Mod+Space       { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
-    Mod+I           { spawn "noctalia" "msg" "caffeine-toggle"; }
-    Mod+Ctrl+Space  { spawn "noctalia" "msg" "settings-toggle"; }
-    Mod+L           { spawn "noctalia" "msg" "session" "lock"; }
-    Mod+X           { spawn "noctalia" "msg" "session" "toggle"; }
-    Mod+Alt+Space   { spawn "noctalia" "msg" "panel-toggle" "control-center"; }
-    Mod+Y           { spawn "noctalia" "msg" "wallpaper-random"; }
-
     // Core Applications
-    Mod+Return         { spawn "ghostty"; }
-    Mod+B              { spawn "brave"; }
+    Mod+Return         { spawn "alacritty"; }
+    Mod+B              { spawn "zen-browser"; }
     Mod+G              { spawn "steam"; }
     Mod+S              { spawn "spotify"; }
-    Mod+E              { spawn "nemo"; }
-
-    // Volume Mappings
-    XF86AudioRaiseVolume { spawn "noctalia" "msg" "volume-up"; }
-    XF86AudioLowerVolume { spawn "noctalia" "msg" "volume-down"; }
-    XF86AudioMute       { spawn "noctalia" "msg" "volume-mute"; }
+    Mod+E              { spawn "dolphin"; }
 
     // Generic Window Actions
     Mod+Q repeat=false { close-window; }
@@ -120,16 +117,42 @@ binds {
     // System Exits
     Mod+Shift+E        { quit; }
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+
+    // Session and System Controls
+    Mod+L { spawn "noctalia" "msg" "session" "lock"; }
+    Mod+X { spawn "noctalia" "msg" "panel-toggle" "session"; }
+    Mod+I { spawn "noctalia" "msg" "caffeine-toggle"; }
+    Mod+Z { spawn "noctalia" "msg" "settings-toggle"; }
+    Mod+Space { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
+    Mod+A { spawn "noctalia" "msg"  "notifications" "toggleHistory"; }
+
+    // Audio Controls (Locked & Repeating)
+    XF86AudioRaiseVolume  { spawn "noctalia" "msg" "volume-up"; }
+    XF86AudioLowerVolume  { spawn "noctalia" "msg" "volume-down"; }
+    XF86AudioMute         { spawn "noctalia" "msg" "volume-mute"; }
+
+    // Media Controls (Locked)
+    XF86AudioPlay  { spawn "noctalia" "msg" "media-play"; }
+    XF86AudioNext  { spawn "noctalia" "msg" "media-next"; }
+    XF86AudioPrev  { spawn "noctalia" "msg" "media-prev"; }
+
+    // Brightness Controls (Repeating)
+    XF86MonBrightnessUp   cooldown-ms=50 { spawn "noctalia" "msg" "brightness-up"; }
+    XF86MonBrightnessDown cooldown-ms=50 { spawn "noctalia" "msg" "brightness-down"; }
+
+    // Screen Capture
+    Print { spawn "noctalia" "msg" "screenshot-region"; }
+    Mod+Print { spawn "noctalia" "msg" "screenshot-fullscreen"; }
+
+    // Theming and Clipboard
+    Mod+Shift+W { spawn "noctalia" "msg" "wallpaper-random"; }
+    Mod+V { spawn "noctalia" "msg" "clipboard-clear"; }
 }
 
-spawn-at-startup "noctalia"
-
-config-notification { disable-failed; }
-layer-rule {
-  match namespace="^noctalia-overview*"
-  place-within-backdrop true
-}
 layer-rule {
   match namespace="^noctalia-wallpaper*"
   place-within-backdrop true
 }
+spawn-at-startup "noctalia"
+
+config-notification { disable-failed; }
