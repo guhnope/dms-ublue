@@ -8,10 +8,13 @@ modules:
         - xdg-desktop-portal-gtk
         - noctalia-git
         - noctalia-greeter
+        - adw-gtk3-theme
+        - qt6ct
       exclude:
         - alacritty
         - waybar
         - fuzzel
+        - gnome-keyring
   - type: files
     files:
       - source: niri

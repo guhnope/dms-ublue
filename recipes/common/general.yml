@@ -14,21 +14,14 @@ modules:
       - helix
       - matugen
       - cliphist
-      - adw-gtk3-theme
-      - qt6ct
       - greetd
       - greetd-selinux
       - wl-clipboard
       - wlsunset
       - imv
-      - caja
-      - atril
-      - engrampa
-      - paperwork
       - ffmpeg
       - x264
       - x265
-      - zed
       - keepassxc
     remove:
       - vim-minimal
@@ -38,8 +31,13 @@ modules:
   - type: dnf
     install:
       packages:
+      - zed
       - network-manager-applet
       - helium-browser-bin
+      - caja
+      - atril
+      - engrampa
+      - paperwork
       exclude:
       - gnome-keyring
   - type: systemd
