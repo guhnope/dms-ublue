@@ -5,6 +5,5 @@ modules:
   - from-file: common/general.yml
   - from-file: compositor/mango.yml
   - from-file: common/gaming.yml
-  - from-file: common/scripts.yml
   - type: initramfs
 description: "MangoWC + Noctalia in an Atomic Desktop"

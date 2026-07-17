@@ -2,5 +2,5 @@
 vt = 1
 
 [default_session]
-user = "greeter"
+user = "greetd"
 command = "/usr/local/bin/noctalia-greeter-session"

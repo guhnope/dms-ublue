@@ -1,10 +1,15 @@
 ---
 modules:
-  - type: rpm-ostree
+  - type: dnf
     install:
-      - niri
-      - xwayland-satellite
-      - xdg-desktop-portal-gtk
+      packages:
+        - niri
+        - xwayland-satellite
+        - xdg-desktop-portal-gtk
+      exclude:
+        - alacritty
+        - waybar
+        - fuzzel
   - type: files
     files:
       - source: niri

@@ -48,6 +48,3 @@ modules:
     files:
       - source: system
         destination: /
-  - type: script
-    scripts:
-      - greetd-users.sh
