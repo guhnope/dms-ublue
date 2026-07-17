@@ -14,6 +14,7 @@ modules:
       - matugen
       - cliphist
       - adw-gtk3-theme
+      - qt6ct
       - greetd
       - greetd-selinux
       - wl-clipboard
@@ -22,7 +23,6 @@ modules:
       - imv
       - caja
       - atril
-      - mousepad
       - engrampa
       - paperwork
       - ffmpeg
@@ -30,7 +30,6 @@ modules:
       - x265
       - zed
       - helium-browser-bin
-      - helium-gtk-theme
       - noctalia-git
       - noctalia-greeter
       - ghostty

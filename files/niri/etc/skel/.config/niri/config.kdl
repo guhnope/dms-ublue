@@ -143,10 +143,10 @@ binds {
     // Screen Capture
     Print { spawn "noctalia" "msg" "screenshot-region"; }
     Mod+Print { spawn "noctalia" "msg" "screenshot-fullscreen"; }
+    Mod+M { spawn "noctalia" "msg" "clipboard-clear"; }
 
-    // Theming and Clipboard
-    Mod+Shift+W { spawn "noctalia" "msg" "wallpaper-random"; }
-    Mod+V { spawn "noctalia" "msg" "clipboard-clear"; }
+    // Theming
+    Mod+Y { spawn "noctalia" "msg" "wallpaper-random"; }
 }
 
 layer-rule {
