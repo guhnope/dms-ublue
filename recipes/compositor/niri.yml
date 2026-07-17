@@ -15,6 +15,7 @@ modules:
         - waybar
         - fuzzel
         - gnome-keyring
+        - swaylock
   - type: files
     files:
       - source: niri

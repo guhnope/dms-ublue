@@ -23,23 +23,17 @@ modules:
       - x264
       - x265
       - keepassxc
-    remove:
-      - vim-minimal
-      - vim-enhanced
-      - firefox
-      - firefox-langpacks
-  - type: dnf
-    install:
-      packages:
       - zed
       - network-manager-applet
       - helium-browser-bin
       - caja
       - atril
       - engrampa
-      - paperwork
-      exclude:
-      - gnome-keyring
+      - paperwork    remove:
+      - vim-minimal
+      - vim-enhanced
+      - firefox
+      - firefox-langpacks
   - type: systemd
     system:
       enabled:
