@@ -30,6 +30,7 @@ modules:
       - x265
       - zed
       - helium-browser-bin
+      - keepassxc
       - noctalia-git
       - noctalia-greeter
       - ghostty
@@ -38,6 +39,7 @@ modules:
       - vim-enhanced
       - firefox
       - firefox-langpacks
+      - gnome-keyring
   - type: systemd
     system:
       enabled:
