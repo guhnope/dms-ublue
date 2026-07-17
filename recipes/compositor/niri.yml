@@ -6,6 +6,8 @@ modules:
         - niri
         - xwayland-satellite
         - xdg-desktop-portal-gtk
+        - noctalia-git
+        - noctalia-greeter
       exclude:
         - alacritty
         - waybar

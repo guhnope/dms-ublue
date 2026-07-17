@@ -7,6 +7,7 @@ modules:
       - https://repos.fyralabs.com/terra44/key.asc
     install:
       - fish
+      - ghostty
       - grim
       - slurp
       - mako
@@ -18,7 +19,6 @@ modules:
       - greetd
       - greetd-selinux
       - wl-clipboard
-      - network-manager-applet
       - wlsunset
       - imv
       - caja
@@ -29,16 +29,18 @@ modules:
       - x264
       - x265
       - zed
-      - helium-browser-bin
       - keepassxc
-      - noctalia-git
-      - noctalia-greeter
-      - ghostty
     remove:
       - vim-minimal
       - vim-enhanced
       - firefox
       - firefox-langpacks
+  - type: dnf
+    install:
+      packages:
+      - network-manager-applet
+      - helium-browser-bin
+      exclude:
       - gnome-keyring
   - type: systemd
     system:
