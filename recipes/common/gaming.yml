@@ -1,21 +1,21 @@
 ---
 modules:
   - type: dnf
-    repos:
-      copr:
-        - bazzite-org/bazzite
     install:
       packages:
         - steam
         - gamemode
-        - mangohud
-        - gamescope
-        - gamescope-session-plus
-        - gamescope-shaders
-        - steamos-manager
+        - terra-gamescope
+        - gamescope-session
+        - gamescope-session-opengamepadui
         - heroic-games-launcher
-        - vkBasalt
-        - vulkan-tools
         - vulkan-loader
-        - vulkan-validation-layers
-        - vulkan-headers
+        - mesa-filesystem
+        - mesa-dri-drivers
+        - mesa-vulkan-drivers
+        - mesa-vulkan-drivers.i686
+        - mesa-libEGL
+        - mesa-libGL
+        - mesa-libgbm
+        - vulkan-tools
+        - vkBasalt

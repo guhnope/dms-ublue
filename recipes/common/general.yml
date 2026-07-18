@@ -30,6 +30,8 @@ modules:
       - atril
       - engrampa
       - paperwork
+      - terra-release-extras
+      - terra-release-mesa
     remove:
       - vim-minimal
       - vim-enhanced
