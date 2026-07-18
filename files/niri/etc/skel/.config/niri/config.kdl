@@ -63,11 +63,41 @@ window-rule {
 // ----------------------------------------------------------------
 binds {
     // Core Applications
-    Mod+Return         { spawn "alacritty"; }
-    Mod+B              { spawn "zen-browser"; }
+
+    Mod+Return         { spawn "ghostty"; }
+    Mod+B              { spawn "helium-browser-bin"; }
     Mod+G              { spawn "steam"; }
-    Mod+S              { spawn "spotify"; }
-    Mod+E              { spawn "dolphin"; }
+    Mod+E              { spawn "caja"; }
+
+ }
+
+    Mod+Return         { spawn "ghostty"; }
+    Mod+B              { spawn "helium-browser-bin"; }
+    Mod+G              { spawn "steam"; }
+    Mod+E              { spawn "caja"; }
+
+"; }
+
+    Mod+Return         { spawn "ghostty"; }
+    Mod+B              { spawn "helium-browser-bin"; }
+    Mod+G              { spawn "steam"; }
+    Mod+E              { spawn "caja"; }
+
+
+
+    Mod+Return         { spawn "ghostty"; }
+    Mod+B              { spawn "helium-browser-bin"; }
+    Mod+G              { spawn "steam"; }
+    Mod+E              { spawn "caja"; }
+
+
+
+    Mod+Return         { spawn "ghostty"; }
+    Mod+B              { spawn "helium-browser-bin"; }
+    Mod+G              { spawn "steam"; }
+    Mod+E              { spawn "caja"; }
+
+
 
     // Generic Window Actions
     Mod+Q repeat=false { close-window; }
